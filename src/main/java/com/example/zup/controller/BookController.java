@@ -2,7 +2,6 @@ package com.example.zup.controller;
 
 import com.example.zup.model.Book;
 import com.example.zup.model.dto.BookPostReqBody;
-import com.example.zup.repository.BookRepository;
 import com.example.zup.service.BookService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +19,7 @@ public class BookController {
     }
 
     @PostMapping("book/new")
-    private ResponseEntity<Book> save(@RequestBody @Valid BookPostReqBody bookPostReqBody){
+    ResponseEntity<Book> save(@RequestBody @Valid BookPostReqBody bookPostReqBody){
         return new ResponseEntity<>(bookService.save(bookPostReqBody), HttpStatus.CREATED);
     }
 

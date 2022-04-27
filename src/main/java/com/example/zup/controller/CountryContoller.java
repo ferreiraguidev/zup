@@ -1,7 +1,6 @@
 package com.example.zup.controller;
 
 import com.example.zup.model.Country;
-import com.example.zup.model.County;
 import com.example.zup.model.dto.CountryPostReqBody;
 import com.example.zup.service.CountryService;
 import org.springframework.http.HttpStatus;
@@ -22,7 +21,7 @@ public class CountryContoller {
 
     @RequestMapping("country/new")
     @PostMapping
-    private ResponseEntity<Country> save(@RequestBody @Valid CountryPostReqBody countryPostReqBody){
+    ResponseEntity<Country> save(@RequestBody @Valid CountryPostReqBody countryPostReqBody){
        return new ResponseEntity<>(countryService.save(countryPostReqBody), HttpStatus.CREATED);
     }
     @ResponseStatus(HttpStatus.OK)

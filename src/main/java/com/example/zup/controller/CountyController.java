@@ -23,7 +23,7 @@ public class CountyController {
 
     @PostMapping
     @RequestMapping("county/new")
-    private ResponseEntity<County> save(@RequestBody @Valid CountyPostReqBody countyPostReqBody){
+    ResponseEntity<County> save(@RequestBody @Valid CountyPostReqBody countyPostReqBody){
         return new ResponseEntity<>(countyService.save(countyPostReqBody), HttpStatus.CREATED);
     }
 

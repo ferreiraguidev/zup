@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Future;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.util.Date;
@@ -41,7 +42,7 @@ public class Book {
     @Column(unique = true)
     private String lsbn;
 
-    // need to be in the future
+    @Future
     private Date publishDate;
 
     @NotNull

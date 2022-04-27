@@ -1,5 +1,6 @@
 package com.example.zup.model.dto;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -12,6 +13,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@Builder
 public class AutorPostReqBody {
 
     @Email
@@ -22,7 +24,8 @@ public class AutorPostReqBody {
     private String name;
 
     @NotNull
-//    @CreatedAt
+    @CreatedDate
+    // CreatedAt *
     private LocalDateTime instant;
 
     @Column(length = 400, nullable = false)

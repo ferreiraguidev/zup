@@ -7,6 +7,7 @@ import com.example.zup.repository.BookRepository;
 import com.example.zup.repository.CategoryRepository;
 import org.springframework.stereotype.Service;
 
+
 @Service
 public class BookService {
 
@@ -33,11 +34,9 @@ public class BookService {
                 .lsbn(bookPostReqBody.getLsbn())
                 .autor(autorRepository.findById(bookPostReqBody.getAutorId())
                         .orElseThrow(NullPointerException::new))
-                //TODO  i'll use autorService
                 .category(categoryRepository.findById(bookPostReqBody.getCategoryId())
                         .orElseThrow(NullPointerException::new))
                 .build();
-
         return bookRepositor.save(book);
     }
 
